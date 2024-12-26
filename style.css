@@ -12,7 +12,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-color: #e5e5e5;
 }
 
@@ -40,7 +40,7 @@ button {
 /* Header */
 
 header {
-    width: 100vw;
+    width: 100%;
     background-color: #b1b1b1;
     height: 2em;
     background-color: #87255B;
@@ -75,10 +75,16 @@ header {
 .nav__logo i {
   transform: rotate(0deg);
   transition: var(--transition-speed);
+  font-size: 2rem;
+  margin: 0 1.5rem;
+  color: #87255B;
+  opacity: 0.7;
 }
+
 
 .primary-nav:hover .nav__logo i {
   transform: rotate(-180deg);
+  opacity: 1;
 }
 
 .nav__link {
@@ -91,17 +97,31 @@ header {
 
 }
 
-.nav__link .fa-solid {
-    min-width: 2rem;
-    margin: 0 1.5rem;
+
+.nav__item .fa-solid {
+    min-width: 2rem; 
+    height: 2rem;    
+    margin: 0 1.3rem;
     color: #87255B;
     opacity: 0.7;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 200ms ease-in-out, color 200ms ease-in-out;
+    padding: 0.3rem; /* Inner padding for balance */
+    box-sizing: content-box; /* Prevent padding from interfering with size */
 }
 
-.nav__link:hover .fa-solid {
+
+.nav__item:hover .fa-solid {
     opacity: 1;
+    color: white;
 }
 
+.nav__item:hover {
+    background-color: #87255B;
+}
 .nav__item {
     width: 100%;
     display: flex;
@@ -206,7 +226,7 @@ header {
     .primary-nav {
         position: fixed;
         bottom: 0;
-        width: 100vw;
+        width: 100%;
         height: 5rem;
     }
 
@@ -217,6 +237,11 @@ header {
 
     .nav__logo {
         display: none;
+    }
+
+    .nav__item {
+        display: flex;
+        justify-content: center;
     }
 
     .link__txt {
